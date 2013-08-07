@@ -8,7 +8,6 @@ function ctor(options, fn) {
     fn = options
     options = {}
   }
-  options._index = 0
   return through2.ctor(options, function (chunk, encoding, callback) {
     if (this.options.wantStrings) chunk = chunk.toString()
     var err = fn.call(this, chunk, encoding)
