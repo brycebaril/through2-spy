@@ -1,0 +1,37 @@
+{
+  "name": "through2-spy",
+  "version": "0.0.0",
+  "description": "A through2 wrapper to for simple stream.PassThrough spies.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brycebaril/through2-spy.git"
+  },
+  "keywords": [
+    "streams",
+    "through",
+    "through2",
+    "passthrough",
+    "spy"
+  ],
+  "author": "Bryce B. Baril",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brycebaril/through2-spy/issues"
+  },
+  "devDependencies": {
+    "tape": "~1.0.4",
+    "tap": "~0.4.3",
+    "stream-spigot": "~2.0.0",
+    "concat-stream": "~1.0.0"
+  },
+  "dependencies": {
+    "through2": "~0.1.0"
+  }
+}
