@@ -1,6 +1,6 @@
 {
   "name": "through2-spy",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A through2 wrapper to for simple stream.PassThrough spies.",
   "main": "index.js",
   "directories": {
