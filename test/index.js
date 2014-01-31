@@ -2,7 +2,7 @@ var test = require("tape").test
 
 var spy = require("../")
 var spigot = require("stream-spigot")
-var concat = require("concat-stream")
+var concat = require("terminus").concat
 
 test("ctor", function (t) {
   t.plan(2)
@@ -28,9 +28,9 @@ test("ctor", function (t) {
     t.deepEquals(copy, records, "Content unchanged")
   }
 
-  spigot(input, {objectMode: true})
+  spigot({objectMode: true}, input)
     .pipe(new Spy({objectMode: true}))
-    .pipe(concat(combine))
+    .pipe(concat({objectMode: true}, combine))
 })
 
 test("ctor options", function (t) {
@@ -57,9 +57,9 @@ test("ctor options", function (t) {
     t.deepEquals(copy, records, "Content unchanged")
   }
 
-  spigot(input, {objectMode: true})
+  spigot({objectMode: true}, input)
     .pipe(new Spy())
-    .pipe(concat(combine))
+    .pipe(concat({objectMode: true}, combine))
 })
 
 test("ctor buffer wantStrings index", function (t) {
@@ -110,9 +110,9 @@ test("simple", function (t) {
     t.deepEquals(copy, records, "Content unchanged")
   }
 
-  spigot(input, {objectMode: true})
+  spigot({objectMode: true}, input)
     .pipe(s)
-    .pipe(concat(combine))
+    .pipe(concat({objectMode: true}, combine))
 })
 
 test("return non-error", function (t) {
@@ -140,9 +140,9 @@ test("return non-error", function (t) {
     t.deepEquals(copy, records, "Content unchanged")
   }
 
-  spigot(input, {objectMode: true})
+  spigot({objectMode: true}, input)
     .pipe(s)
-    .pipe(concat(combine))
+    .pipe(concat({objectMode: true}, combine))
 })
 
 test("abort", function (t) {

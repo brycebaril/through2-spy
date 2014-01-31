@@ -26,12 +26,12 @@
     "url": "https://github.com/brycebaril/through2-spy/issues"
   },
   "devDependencies": {
-    "tape": "~1.0.4",
-    "tap": "~0.4.3",
-    "stream-spigot": "~2.0.0",
-    "concat-stream": "~1.0.0"
+    "tape": "~2.4.0",
+    "tap": "~0.4.8",
+    "stream-spigot": "~3.0.3",
+    "terminus": "~1.0.9"
   },
   "dependencies": {
-    "through2": "~0.2.2"
+    "through2": "~0.4.1"
   }
 }
