@@ -51,6 +51,29 @@ var meter = new Meter()
 
 ```
 
+API
+---
+
+`require("through2-spy")([options], fn)`
+---
+
+Create a `through2-spy` instance that will call `fn(chunk)` and then silently pass through data downstream.
+
+`require("through2-spy").ctor([options], fn)`
+---
+
+Create a `through2-spy` Type that can be instantiated via `new Type()` or `Type()` to create reusable spies.
+
+`require("through2-spy").obj([options], fn)`
+---
+
+Create a `through2-spy` that defaults to `objectMode = true`.
+
+`require("through2-spy").objCtor([options], fn)`
+---
+
+Create a `through2-spy` Type that defaults to `objectMode = true`.
+
 Options
 -------
 

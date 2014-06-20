@@ -22,16 +22,27 @@
   ],
   "author": "Bryce B. Baril",
   "license": "MIT",
+  "jshintConfig": {
+    "asi": true,
+    "globalstrict": true,
+    "validthis": true,
+    "eqnull": true,
+    "node": true,
+    "loopfunc": true,
+    "newcap": false,
+    "eqeqeq": false
+  },
   "bugs": {
     "url": "https://github.com/brycebaril/through2-spy/issues"
   },
   "devDependencies": {
-    "tape": "~2.4.0",
-    "tap": "~0.4.8",
-    "stream-spigot": "~3.0.3",
-    "terminus": "~1.0.9"
+    "tape": "~2.13.3",
+    "tap": "~0.4.11",
+    "stream-spigot": "~3.0.4",
+    "terminus": "~1.0.10"
   },
   "dependencies": {
-    "through2": "~0.4.1"
+    "through2": "~0.5.1",
+    "xtend": "~3.0.0"
   }
 }

@@ -1,3 +1,5 @@
+"use strict";
+
 var test = require("tape").test
 
 var spy = require("../")
@@ -30,6 +32,35 @@ test("ctor", function (t) {
 
   spigot({objectMode: true}, input)
     .pipe(new Spy({objectMode: true}))
+    .pipe(concat({objectMode: true}, combine))
+})
+
+test("objCtor", function (t) {
+  t.plan(2)
+
+  var count = 0
+  var Spy = spy.objCtor(function () {
+    count++
+  })
+
+  var input = [
+    {foo: "bar"},
+    {foo: "baz"},
+    {foo: "bif"},
+    {foo: "blah"},
+    {foo: "buzz"},
+  ]
+
+  // Input gets consumed, so make a copy for comparison.
+  var copy = input.slice(0)
+
+  function combine(records) {
+    t.equals(count, 5, "Spied the right number of chunks")
+    t.deepEquals(copy, records, "Content unchanged")
+  }
+
+  spigot({objectMode: true}, input)
+    .pipe(new Spy())
     .pipe(concat({objectMode: true}, combine))
 })
 
@@ -121,6 +152,36 @@ test("return non-error", function (t) {
   // Non-error return is ignored.
   var count = 0
   var s = spy({objectMode: true}, function () {
+    if (++count > 2) return "WUT"
+  })
+
+  var input = [
+    {foo: "bar"},
+    {foo: "baz"},
+    {foo: "bif"},
+    {foo: "blah"},
+    {foo: "buzz"},
+  ]
+
+  // Input gets consumed, so make a copy for comparison.
+  var copy = input.slice(0)
+
+  function combine(records) {
+    t.equals(count, 5, "Spied the right number of chunks")
+    t.deepEquals(copy, records, "Content unchanged")
+  }
+
+  spigot({objectMode: true}, input)
+    .pipe(s)
+    .pipe(concat({objectMode: true}, combine))
+})
+
+test("return non-error obj", function (t) {
+  t.plan(2)
+
+  // Non-error return is ignored.
+  var count = 0
+  var s = spy.obj(function () {
     if (++count > 2) return "WUT"
   })
 
