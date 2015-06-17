@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tap test/"
+    "test": "node test/"
   },
   "repository": {
     "type": "git",
@@ -36,13 +36,13 @@
     "url": "https://github.com/brycebaril/through2-spy/issues"
   },
   "devDependencies": {
-    "tape": "~2.13.3",
-    "tap": "~0.4.11",
-    "stream-spigot": "~3.0.4",
-    "terminus": "~1.0.10"
+    "tape": "~4.0.0",
+    "stream-spigot": "~3.0.5",
+    "terminus": "~1.0.12"
   },
   "dependencies": {
-    "through2": "~0.5.1",
-    "xtend": "~3.0.0"
-  }
+    "through2": "~2.0.0",
+    "xtend": "~4.0.0"
+  },
+  "homepage": "https://github.com/brycebaril/through2-spy"
 }
